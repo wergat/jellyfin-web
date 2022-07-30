@@ -749,7 +749,32 @@ function renderLinks(page, item) {
 
     if (item.ExternalUrls) {
         for (const url of item.ExternalUrls) {
-            links.push(`<a is="emby-linkbutton" class="button-link" href="${url.Url}" target="_blank">${escapeHtml(url.Name)}</a>`);
+            // console.warn(url);
+            let parsedURL = url.Url;
+            let parsedText = escapeHtml(url.Name);
+            switch (url.Name) {
+                case 'Shoko Group':
+                    parsedURL = `#/wergatt?target=shokogroup&id=${item.ProviderIds['Shoko Group'] ?? ''}`;
+                    parsedText = 'Wergatt';
+                    break;
+                case 'Shoko Series':
+                    parsedURL = `#/wergatt?target=shokoseries&id=${item.ProviderIds['Shoko Series'] ?? ''}`;
+                    parsedText = 'Wergatt';
+                    break;
+                case 'Shoko Episode':
+                    parsedURL = `#/wergatt?target=shokoepisode&id=${item.ProviderIds['Shoko Episode'] ?? ''}`;
+                    parsedText = 'Wergatt';
+                    break;
+                case 'Trakt':
+                    parsedURL = '';
+                    break;
+                default:
+                    break;
+            }
+            const target = parsedURL === url.Url ? 'target="_blank"' : '';
+            if (parsedURL !== '') {
+                links.push(`<a is="emby-linkbutton" class="button-link" href="${parsedURL}" ${target}>${parsedText}</a>`);
+            }
         }
     }
 

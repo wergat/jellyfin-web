@@ -501,6 +501,14 @@ import { appRouter } from '../components/appRouter';
     });
 
     defineRoute({
+        alias: '/wergatt',
+        path: 'wergatt/index.html',
+        autoFocus: false,
+        controller: 'wergatt/index',
+        type: 'wergatt'
+    });
+
+    defineRoute({
         path: '/',
         autoFocus: false,
         isDefaultRoute: true
