@@ -15,7 +15,7 @@ export const history = createHashHistory();
 /**
  * Page types of "no return" (when "Go back" should behave differently, probably quitting the application).
  */
-const START_PAGE_TYPES = ['home', 'login', 'selectserver'];
+const START_PAGE_TYPES = ['home', 'login', 'selectserver', 'wergatt'];
 
 class AppRouter {
     allRoutes = new Map();

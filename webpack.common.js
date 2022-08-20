@@ -48,6 +48,10 @@ module.exports = {
                     to: 'themes/'
                 },
                 {
+                    from: 'wergatt/',
+                    to: 'wergatt/'
+                },
+                {
                     from: 'assets/**',
                     globOptions: {
                         dot: true,

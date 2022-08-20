@@ -29,7 +29,10 @@
       "color": "#0c2450"
     }
   ],
-  "menuLinks": [],
+  "menuLinks": [{
+    "name": "Wergatt",
+    "url": "#/wergatt"
+  }],
   "servers": [],
   "plugins": [
     "playAccessValidation/plugin",
