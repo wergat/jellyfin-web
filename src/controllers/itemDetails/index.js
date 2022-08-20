@@ -743,6 +743,9 @@ function renderLinks(page, item) {
 
     const links = [];
 
+    // TODO: Make sure to always have a wergatt button
+    links.push('<a is="emby-linkbutton" class="button-link" href="#/wergatt">Wergatt2</a>');
+
     if (!layoutManager.tv && item.HomePageUrl) {
         links.push(`<a is="emby-linkbutton" class="button-link" href="${item.HomePageUrl}" target="_blank">${globalize.translate('ButtonWebsite')}</a>`);
     }

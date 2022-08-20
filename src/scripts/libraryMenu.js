@@ -675,7 +675,9 @@ import '../assets/css/flexstyles.scss';
                     const option = document.createElement('a', 'emby-linkbutton');
                     option.classList.add('navMenuOption', 'lnkMediaFolder');
                     option.rel = 'noopener noreferrer';
-                    option.target = '_blank';
+                    if (!link.url.startsWith('#')) {
+                        option.target = '_blank';
+                    }
                     option.href = link.url;
 
                     const icon = document.createElement('span');
